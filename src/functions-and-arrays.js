@@ -19,24 +19,27 @@ const words = [
 ];
 
 function findScaryWord(words) {
+  let lengthyW;
   if (words.length == 0) {
     return null;
-  } else {
-    words.forEach(function (item) {
-      return item;
-    });
   }
+  for (i = 0; i < words.length; i++) {
+    for (j = 1; j < words.length; j++) {
+      if (words[i].length >= words[j].length) {
+        lengthyW = words[i];
+      }
+    }
+  }
+  return lengthyW;
 }
 
 // Progression #3: Net Price
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function netPrice() {
+function netPrice(numbers) {
+  var arr = [];
   var sum = 0;
-  count = 0;
-  if (numbers.length == 0) {
-    return 0;
-  }
+  var count = 0;
 
   numbers.forEach(output);
 
@@ -51,10 +54,8 @@ function netPrice() {
   for (var i = 0; i < numbers.length; i++) {
     sum = sum + numbers[i];
   }
-
-  numbers.unshift(sum);
-  numbers.length = 1;
-  return numbers;
+  arr.push(sum);
+  return arr;
 }
 
 // Progression #4: Calculate the average
